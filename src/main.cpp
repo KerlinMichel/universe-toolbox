@@ -32,12 +32,15 @@ int main()
     glfwGetFramebufferSize(window, &width, &height);
   
     glViewport(0, 0, width, height);
-    
     while(!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
+
+        glClearColor(0.05f, 0.05f, 0.1f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
         glfwSwapBuffers(window);
     }
-
+    glfwTerminate();
     return 0;
 }
